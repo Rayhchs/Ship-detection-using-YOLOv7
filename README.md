@@ -23,14 +23,14 @@ Thanks to incredible work of [YOLOv7](https://github.com/WongKinYiu/yolov7) ([YO
       
       sh train.sh
       
-Pretrain model can be download from [GoogleDrive]()
+Pretrain model can be download from [Here](). Put the pretrain weight into yolov7/runs/train/yolov7/weights
       
 * Evaluation
 
       sh. eval.sh
       
 * Additional images
-Downloald cropped images from [GoogleDrive]() and put it into appendix
+Downloald cropped images from [Here]() and put it into appendix
 
       python inference.py --source ./appendix --weights ../runs/train/yolov7/weights/best.pt --img-size 256 --conf-thres 0.5
 
