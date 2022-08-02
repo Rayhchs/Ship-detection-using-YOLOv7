@@ -30,7 +30,7 @@ Pretrain model can be download from [Here](). Put the pretrain weight under yolo
       sh. eval.sh
       
 * Additional images
-Downloald cropped images from [Here]() and put it into appendix
+Downloald cropped images from [Here]() and put it into sar
 
       python inference.py --source ./appendix --weights ../runs/train/yolov7/weights/best.pt --img-size 256 --conf-thres 0.5
 
