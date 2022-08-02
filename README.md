@@ -1,1 +1,4 @@
+# Ship Detection From SAR Images Using YOLOv7
+Thanks to incredible work of [YOLOv7](https://github.com/WongKinYiu/yolov7) ([YOLOv7 paper](https://arxiv.org/abs/2207.02696)) for object detection, this repo applies YOLOv7 model to implement ship detection from SAR images. The SAR images is derived from [SAR-Ship-Dataset](https://github.com/CAESAR-Radi/SAR-Ship-Dataset). This integral dataset is composed of 39,729 ship chips cropped from 102 Chinese Gaofen-3 images and 108 Sentinel-1 with 256 by 256 pixels. This repo seperate dataset into 90% of training, 5% of validation and 5% of testing. In the training process, we modify some configuration but mainly follow the process provided by [YOLOv7](https://github.com/WongKinYiu/yolov7). This repo provides modified config and process from data preprocessing to evaluation.
 
+## Getting Started
