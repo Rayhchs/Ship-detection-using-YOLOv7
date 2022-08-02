@@ -23,7 +23,7 @@ Thanks to incredible work of [YOLOv7](https://github.com/WongKinYiu/yolov7) ([YO
       
       sh train.sh
       
-Pretrain model can be download from [Here](). Put the pretrain weight into yolov7/runs/train/yolov7/weights
+Pretrain model can be download from [Here](). Put the pretrain weight under yolov7/runs/train/yolov7/weights/
       
 * Evaluation
 
