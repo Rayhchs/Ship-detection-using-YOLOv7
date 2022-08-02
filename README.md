@@ -30,7 +30,7 @@ Pretrain model can be download from [Here](). Put the pretrain weight under yolo
       sh. eval.sh
       
 * Additional images
-Downloald cropped images from [Here](https://drive.google.com/drive/folders/11hxJRMBh_dd4ro-Gda9_-rIX0ImGc_g8?usp=sharing) and put it into sar
+This repository also test the pretrain model on real SAR image cropped from Sentinel 1 image. You can downloald cropped images from [Here](https://drive.google.com/drive/folders/11hxJRMBh_dd4ro-Gda9_-rIX0ImGc_g8?usp=sharing) and put it into sar\. 
 
       python inference.py --source ./appendix --weights ../runs/train/yolov7/weights/best.pt --img-size 256 --conf-thres 0.5
 
