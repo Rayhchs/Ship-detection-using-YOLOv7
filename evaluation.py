@@ -5,7 +5,7 @@ from tqdm import tqdm
 import numpy as np
 
 def evaluation():
-    pred_txts, label_txts, sz = opt.pred_txt, opt.label_txt, opt.img_size
+    pred_txts, label_txts = opt.pred_txt, opt.label_txt
     pred_txts = glob(pred_txts + '**.txt')
     label_tmp = glob(label_txts + '**.txt')
     
@@ -50,7 +50,7 @@ def evaluation():
         y0 += mses[i][1]
         x1 += mses[i][2]
         y1 += mses[i][3]
-    x0, y0, x1, y1 = x0/len(mses)*sz, y0/len(mses)*sz, x1/len(mses)*sz, y1/len(mses)*sz
+    x0, y0, x1, y1 = x0/len(mses), y0/len(mses), x1/len(mses), y1/len(mses)
     
     print(f'TP: {tp}; FP: {fp}; FN: {fn}; Distant-x0: {x0}; y0: {y0}; x1: {x1}; y1: {y1} (pixels)')
             
@@ -59,6 +59,5 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--pred_txt', type=str, default='./results/', help='folder contains predicted txt file')
     parser.add_argument('--label_txt', type=str, default='./labels/test/', help='folder contains label txt file')
-    parser.add_argument('--img_size', type=int, default=256, help='origin image size')
     opt = parser.parse_args()
     evaluation()

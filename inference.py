@@ -25,6 +25,8 @@ def crop(source):
     path, imgsz = source, opt.img_size
     if 'tif' in path or 'tiff' in path:
         img = tiff.imread(path)
+        img[np.where(img[:,:]==65536)] = 0
+        img = np.uint16(img)
         img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
     else:
         img = cv2.imread(path)
@@ -52,6 +54,8 @@ def merge(imgs, source):
     path, imgsz = source, opt.img_size
     if 'tif' in path or 'tiff' in path:
         img = tiff.imread(path)
+        img[np.where(img[:,:]==65536)] = 0
+        img = np.uint16(img)
         img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
     else:
         img = cv2.imread(path)
@@ -114,9 +118,11 @@ def detect(save_img=True):
 
         filename = os.path.basename(source)
         detected_imgs = []
+        detected_imgs2 = []
         for img in tqdm(dataset):
 
             im0 = img.copy()
+            im1 = im0.copy()
 
             img = np.transpose(img, [2, 0, 1])
             img = torch.from_numpy(img).to(device)
@@ -162,11 +168,14 @@ def detect(save_img=True):
                                 plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=3)
 
             detected_imgs.append(im0)
+            detected_imgs2.append(im1)
         result = merge(detected_imgs, source)
+        result2 = merge(detected_imgs2, source)
 
         if save_img:
             if 'tif' in filename or 'tiff' in filename:
-               cv2.imwrite(save_path + txtname + '.jpg', result) 
+               cv2.imwrite(save_path + txtname + '.jpg', result)
+               cv2.imwrite(save_path + txtname + '_ori.jpg', result2)
             cv2.imwrite(save_path + filename, result)
             print(f" The image with the result is saved in: {save_path}")
 
