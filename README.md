@@ -38,4 +38,9 @@ This repository also test the pretrain model on real SAR image cropped from Sent
 Here shows some detection results of testing set. And its' evaluation results.
 
 <img src="https://github.com/Rayhchs/Ship-detection-using-YOLOv7/blob/main/imgs/results.jpg" width="720">
-    
+<img src="https://github.com/Rayhchs/Ship-detection-using-YOLOv7/blob/main/imgs/eval.jpg" width="720">
+
+## Real Sentinel-1 image
+We crop the SAR image from Sentinel-1 manually. However, since the training dataset doesn't include the land image, we exclude the land part of SAR image. The detected result is shown as below.
+
+
