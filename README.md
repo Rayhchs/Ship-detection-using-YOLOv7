@@ -35,6 +35,6 @@ This repository also test the pretrain model on real SAR image cropped from Sent
       python inference.py --source ./appendix --weights ../runs/train/yolov7/weights/best.pt --img-size 256 --conf-thres 0.5
 
 ## Results
-      
-      
+Here shows some detection results of testing set
+<img src="https://github.com/Rayhchs/Pix2pix-tensorflow-implementation/blob/main/test/3.jpg" width="640">
       
